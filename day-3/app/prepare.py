@@ -19,6 +19,7 @@ def download_file(repo_id, filename, dest_filename):
 
     # Copy the actual file to the destination
     shutil.copy2(real_file_path, dest_filename)
+    os.remove(real_file_path)
 
 # Download model if not present
 if not os.path.exists(MODEL_FILENAME):
